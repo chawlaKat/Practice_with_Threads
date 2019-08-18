@@ -24,7 +24,12 @@ int main(int argc, char *argv[])
     {
         cout << "You requested " << argv[1] << " thread(s).\n";
 
-        //TODO: add input validation, save to requestThdCt
+        //TODO: tune input validation
+        requestThdCt = stoi(argv[1]);
+        if (requestThdCt > 0 && requestThdCt < 100)
+        {
+            threadCount = requestThdCt;
+        }
     }
 
     // tell user the real thread count
