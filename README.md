@@ -11,5 +11,9 @@ http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/<br>
 #Threads
 The file "practice_threads" contains a program that creates three threads and has each print a "hello" statement.
 
+Uses the following reference pages:<br>
+* https://www.geeksforgeeks.org/multithreading-in-cpp/
+* https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
+
 Use "make" to compile the program.
 Then use "./practice_thread" to run it.
