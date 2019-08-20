@@ -1,13 +1,31 @@
 #include <iostream>
 #include <thread>
 #include <vector>
+#include <mutex>
+#include <unistd.h>
 using namespace std;
+
+// mutex for critical section
+std::mutex mtx;
 
 // thread identifies itself
 void sayHello(int id)
 {
     string hello = "Hi, I'm thread " + to_string(id) + ".\n";
+
+    // don't let the "hello" interrupt "I'm locked"
+    mtx.lock();
     cout << hello;
+    mtx.unlock();
+
+    // give someone else a chance to use the mutex
+    usleep(5);
+
+    // practice locking stuff, prove no interruption
+    mtx.lock();
+    cout << "Hey, look! " << "(" << id << ")\n";
+    cout << "This section is locked! " << "(" << id << ")\n\n";
+    mtx.unlock();
 }
 
 int main(int argc, char *argv[])
