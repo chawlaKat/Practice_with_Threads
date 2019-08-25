@@ -39,9 +39,6 @@ int main()
         cout << strInput << endl;
     }
 
-    // getline(myFile, strInput);
-    // cout << strInput << endl;
-
     // close it!
     // (does destructor already get called? does this cause problems?)
     myFile.close();

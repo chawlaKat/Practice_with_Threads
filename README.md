@@ -31,4 +31,11 @@ Uses the following reference pages: <br>
 * https://stackoverflow.com/questions/33869621/last-word-repeated-in-a-text-file-c 
 * https://stackoverflow.com/questions/3629321/try-catch-block-for-c-file-io-errors-not-working 
 * http://www.cplusplus.com/reference/istream/istream/getline/ 
-* https://stackoverflow.com/questions/20756968/reading-multiple-lines-from-a-file-using-getline
+* https://stackoverflow.com/questions/20756968/reading-multiple-lines-from-a-file-using-getline 
+* https://www.oreilly.com/library/view/c-cookbook/0596007612/ch04s19.html
+
+#Regex 
+Uses the following reference pages: <br>
+* http://www.cplusplus.com/reference/regex/
+* https://www.rexegg.com/regex-quickstart.html
+* https://regex101.com/
