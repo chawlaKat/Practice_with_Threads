@@ -7,14 +7,14 @@ namespace fs = std::experimental::filesystem;
 //parameter: file to search
 int main(int argc, char *argv[])
 {
-    //TODO: learn correct syntax
-    // holder for argument
     fs::path pathToSearch = fs::current_path();
     fs::path pathToValidate;
     bool inputIsPath = false;
     bool inputPathExists = false;
     int txtExtensionFoundAt = -1;
     string pathFoundName = "";
+    int pathLength = 0;
+    int extensionIndex = 0;
 
     // check for argument
     if (argc > 1)
@@ -45,18 +45,34 @@ int main(int argc, char *argv[])
     for (fs::path pathFound : fs::recursive_directory_iterator(pathToSearch)){
         txtExtensionFoundAt = -1;
 
-        cout << pathFound << "\n";
+        cout << "Found: " << pathFound << "\n";
          
         // check if is text file
         pathFoundName = pathFound.string();
-        // txtExtensionFoundAt = pathFoundName.find(".txt")
+        txtExtensionFoundAt = pathFoundName.find(".txt");
 
         // path contains ".txt"
-        // NOTE: would not handle ".txt.zip" properly yet
-        // if (txtExtensionFoundAt > 0)
-        // {
-        //     cout << pathFound << " is a .txt file\n\n";
-        // }
+        // regex would be another way to approach it, but i dont wanna mess with those today haha
+        // to make this more flexible, i could have the user pass in the desired extension, with '.txt' as default?
+
+        // get str length
+        pathLength = pathFoundName.length();
+
+        // find ".txt" 4 characters from end
+        extensionIndex = pathLength - 4;
+        txtExtensionFoundAt = pathFoundName.find(".txt", extensionIndex);
+
+        // clarify behavior when ".txt" is not found
+        if (txtExtensionFoundAt == string::npos)
+        {
+            txtExtensionFoundAt = -1;
+        }
+
+        // ".txt" was found
+        if (txtExtensionFoundAt >= 0)
+        {
+            cout << pathFound << " is a .txt file\n\n";
+        }
     }
 
     return 0;
