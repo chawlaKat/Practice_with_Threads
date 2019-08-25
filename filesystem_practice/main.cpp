@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     //TODO: learn correct syntax
     // holder for argument
-    //fs::path pathToSearch(fs::current_path());
+    fs::path pathToSearch = fs::current_path();
 
     // check for argument
     if (argc > 1)
@@ -18,7 +18,8 @@ int main(int argc, char *argv[])
 
     // sample print
     std::cout << "Print : )\n";
-    std::cout << "Path to search is: " << pathToSearch;
+    //std::cout << "Path to search is: " << pathToSearch;
+    std::cout << "Current path is: " << fs::current_path() << "\n";
 
     return 0;
 }

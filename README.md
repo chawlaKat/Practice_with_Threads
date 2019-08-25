@@ -19,3 +19,9 @@ Uses the following reference pages:<br>
 Use "make" to compile the program.<br>
 Then use "./practice_thread" to run it. <br>
 To specify thread count, pass in a non-negative integer; for example, "./practice_thread 3"
+
+#Paths
+
+Uses the following reference pages: <br>
+* http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ 
+* https://www.bfilipek.com/2017/08/cpp17-details-filesystem.html
