@@ -9,7 +9,7 @@ The file "tutorial_ref" contains all the files from the following tutorial:<br>
 http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/<br>
 
 #Threads
-The file "practice_threads" contains a program that creates three threads and has each print a "hello" statement.
+The file "practice_threads" contains a program that creates a user-specified threads (defaults to 5). Each thread prints a "hello" statement and a "proof of lock" statement, demonstrating use of a mutex.
 
 Uses the following reference pages:<br>
 * https://www.geeksforgeeks.org/multithreading-in-cpp/
@@ -21,7 +21,12 @@ Then use "./practice_thread" to run it. <br>
 To specify thread count, pass in a non-negative integer; for example, "./practice_thread 3"
 
 #Paths
-
 Uses the following reference pages: <br>
 * http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ 
 * https://www.bfilipek.com/2017/08/cpp17-details-filesystem.html
+
+#Word Counter
+Uses the following reference pages: <br>
+* http://www.cplusplus.com/doc/tutorial/files/
+* https://stackoverflow.com/questions/33869621/last-word-repeated-in-a-text-file-c 
+* https://stackoverflow.com/questions/3629321/try-catch-block-for-c-file-io-errors-not-working

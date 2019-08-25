@@ -3,8 +3,7 @@
 
 * - open a file (from input?)
 * - for each character, if a-z, A-Z, or 0-9, store it
-*    - if other (non-space), ignore it
-*    - if space, save stored word
+*    - if other (non-space), save stored word
 
 (shhh that's MOre than enough to start with. open a text file. start there.)
 
@@ -27,25 +26,26 @@ int main()
     if (!myFile)
     {
         cout << "Could not open " << filename << "\n";
+        return 0;
     }
-    else
+
+    // so...it worked.
+    cout << filename << " opened.\n";
+
+    // while there's still stuff in the file
+    while (getline(myFile,strInput))
     {
-        cout << filename << " opened.\n";
-
-        // while there's still stuff in the file
-        // TODO: fix bug. reads "<3" twice.
-        while (myFile)
-        {
-            // reeead : )
-            // NOTE: extraction operator breaks on whitespace, not just spaces
-            myFile >> strInput;
-            cout << strInput << endl;
-        }
-
-        // close it!
-        // (does destructor already get called? does this cause problems?)
-        myFile.close();
+        // reeead : )
+        cout << strInput << endl;
     }
+
+    // getline(myFile, strInput);
+    // cout << strInput << endl;
+
+    // close it!
+    // (does destructor already get called? does this cause problems?)
+    myFile.close();
+    
     
 
     cout << "End of program.\n";
