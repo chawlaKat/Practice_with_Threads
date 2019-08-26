@@ -1,22 +1,19 @@
 /*
-* Okay! What do I need this to do?
+STUB!!!!
 
-* - open a file (from input?)
-* - for each character, if a-z, A-Z, or 0-9, store it
-*    - if other (non-space), save stored word
-
-(shhh that's MOre than enough to start with. open a text file. start there.)
-
+This splits on whitespace and includes undesirable characters.
 */
 
 #include <iostream>
 #include <fstream>
+#include <map>
 using namespace std;
 
 int main()
 {
     string filename = "sample_text_doc.txt";
     string strInput = "";
+    map<string, int> words;
 
     // open a file
     ifstream myFile(filename);
@@ -33,16 +30,20 @@ int main()
     cout << filename << " opened.\n";
 
     // while there's still stuff in the file
-    while (getline(myFile,strInput))
+    // STUB: this splits on whitespace, includes undesirable characters
+    while (myFile >> strInput)
     {
-        // reeead : )
-        cout << strInput << endl;
+        ++words[strInput];
     }
 
     // close it!
     // (does destructor already get called? does this cause problems?)
     myFile.close();
     
+    for (map<string,int>::iterator i = words.begin(); i != words.end(); ++i)
+    {
+        cout << i->first << " occurred " << i->second << " times" << endl;
+    }
     
 
     cout << "End of program.\n";
