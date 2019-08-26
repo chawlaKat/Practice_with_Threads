@@ -7,11 +7,15 @@ This splits on whitespace and includes undesirable characters.
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <experimental/filesystem>
+
 using namespace std;
+namespace fs = std::experimental::filesystem;
 
 int main()
 {
-    string filename = "sample_text_doc.txt";
+    fs::path filename("./test_files/sample_text_doc.txt");
+    //string filename = "sample_text_doc.txt";
     string strInput = "";
     map<string, int> words;
 

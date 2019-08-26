@@ -3,14 +3,18 @@
 #include <vector>
 #include <mutex>
 #include <unistd.h>
+#include <semaphore.h>
 using namespace std;
 
 // mutex for critical section
-std::mutex mtx;
+mutex mtx;
+sem_t semaphore;
 
 // thread identifies itself
 void sayHello(int id)
 {
+    sem_wait(&semaphore);
+
     string hello = "Hi, I'm thread " + to_string(id) + ".\n";
 
     // don't let the "hello" interrupt "I'm locked"
@@ -26,6 +30,8 @@ void sayHello(int id)
     cout << "Hey, look! " << "(" << id << ")\n";
     cout << "This section is locked! " << "(" << id << ")\n\n";
     mtx.unlock();
+
+    sem_post(&semaphore);
 }
 
 int main(int argc, char *argv[])
@@ -55,6 +61,7 @@ int main(int argc, char *argv[])
 
     // start some threads
     thread thArray[threadCount];
+    sem_init(&semaphore, 0, threadCount);
 
     for (int i = 0; i < threadCount; i++)
     {
@@ -66,6 +73,8 @@ int main(int argc, char *argv[])
     {
         thArray[i].join();
     }
+
+    sem_destroy(&semaphore);
 
     // mark program completion
     cout << "\nMain completed.\n";
