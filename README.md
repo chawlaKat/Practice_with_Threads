@@ -15,6 +15,7 @@ Uses the following reference pages:<br>
 * https://www.geeksforgeeks.org/multithreading-in-cpp/
 * https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
 * https://stackoverflow.com/questions/10661792/how-to-create-an-array-of-thread-objects-in-c11
+* https://www.geeksforgeeks.org/use-posix-semaphores-c/
 
 Use "make" to compile the program.<br>
 Then use "./practice_thread" to run it. <br>
